@@ -33,5 +33,5 @@ Para esta segunda parte deberán trabajar en otra abstracción: la del visitador
 Para esta última parte, deberás crear 2 nuevos visitadores:
 
 1️⃣ El primero vistará un arbol familiar (de Personas), y calculará la edad total de todos los familiares.
-2️⃣ El segundo vistará un arbol familiar (de Personas), y calculará encontrará al miembro de la familia con el nombre más largo.
+2️⃣ El segundo vistará un arbol familiar (de Personas), y encontrará al miembro de la familia con el nombre más largo.
 
