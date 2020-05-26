@@ -2,37 +2,44 @@
 using System.Collections.ObjectModel;
 using System;
 
-namespace Library
+namespace Library 
 {
-    public class Node
+    public class Node<T>: IVisitor<T>
     {
-        private int number;
-
-        private List<Node> children = new List<Node>();
-
-        public int Number {
+        private T content;
+        private List<Node<T>> children = new List<Node<T>>();
+        public T Content {
             get
             {
-                return this.number;
+                return this.content;
             }
         }
-
-        public ReadOnlyCollection<Node> Children { 
+        public ReadOnlyCollection<Node<T>> Children { 
             get
             {
                 return this.children.AsReadOnly();
             }
         }
-
-        public Node(int number)
+        public Node(T content) 
         {
-            this.number = number;
+            this.content = content;
         }
-
-        public void AddChildren(Node n)
+        public void AddChildren(Node<T> n)
         {
             this.children.Add(n);
-        }
+        }  
+        public virtual void accept(IVisitor<T> visitor)
+	    {
+		    visitor.visit(this);	
+	    }
         
+        public virtual void visit (Node<T> visitado)
+        {
+            
+        }
+        public  virtual int visit (T visitado)
+        {
+            return 0;
+        }
     }
 }
