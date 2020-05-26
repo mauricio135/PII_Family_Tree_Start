@@ -6,9 +6,7 @@ El presente código contiene una representación de un árbol de números. Un á
 
 Un nodo que no tiene hijos diremos que es una "hoja".
 
-Además, el código contiene una implementación muy sencilla del patrón visitor. El visitador recorre el árbol y calcula la suma de todos los números.
-
-Por ejemplo, dado un árbol:
+Por ejemplo, puedo utilizar un árbol para representar la siguiente estructura de números enteros:
 
 ```
     1
@@ -16,22 +14,29 @@ Por ejemplo, dado un árbol:
   2   3
 ```
 
-el visitador dará como resultado el valor `6`: `1 + 2 + 3`.
+## Visitor
 
-## Parte 1: Abstracción del arbol
+El patrón visitor es un excelente aliado cuando necesitamos recorrer estructuras y realizar operaciones sobre ellas. Por ejemplo, puedo utilizar un Visitador para recorrer el árbol del ejemplo anterior y calcular la suma de sus nodos, cuyo resultado es 6.
 
-Como primer objetivo, deberán modificar el programa para poder representar un árbol familiar. Un árbol familiar es un árbol cuyos nodos contienen una persona. Para este caso, nos iteresa el nombre y la edad de cada persona.
+## Parte 1: Crear un nodo Persona
 
-Verán que la implementación del arbol provista es bastante rígida. Será tarea de ustedes modificar la implementación para hacerla más abstracta.
+Como primer objetivo, deberán modificar el programa provisto para que un Nodo almacene:
 
-## Parte 2: Abstracción del visitador
+ - un objeto de tipo `Persona` (que deberán crear ustedes) con nombre y edad.
+ - la lista de nodos hijos.
 
-Para esta segunda parte deberán trabajar en otra abstracción: la del visitador. La implementación del Visitor provista es también bastante rígida. En este caso, buscamos generar una abstracción de visitadores que puedan visitar árboles _genéricos_, por ejemplo, árboles cuyos nodos son números, o árboles cuyos nodos son Personas.
+## Parte 2: Árbol genealógico
 
-## Parte 3: ¿Abierto a la extensión?
+Crear en el `Program.cs` una estuctura de árbol de Personas para representar un árbol genealógico. Incluyan al menos 8 personas.
 
-Para esta última parte, deberás crear 2 nuevos visitadores:
+## Parte 3: Visitador
 
-1️⃣ El primero vistará un arbol familiar (de Personas), y calculará la edad total de todos los familiares.
-2️⃣ El segundo vistará un arbol familiar (de Personas), y calculará encontrará al miembro de la familia con el nombre más largo.
+Para esta segunda parte deberán aplicar el patrón Visitor, implementando un visitador para calcular la suma de las edades de todos los integrantes de la familia.
+
+## Parte 4: ¿Abierto a la extensión?
+
+Para esta última parte, deberán crear 2 nuevos visitadores:
+
+1️⃣ El primero vistará el árbol genealógico para determinar qué hijo es más grande (hijo = nodos hojas)
+2️⃣ El segundo visitará el árbol genealógico y determinará quién tiene el nombre más largo.
 

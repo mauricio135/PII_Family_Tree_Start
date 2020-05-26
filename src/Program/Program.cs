@@ -7,13 +7,13 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            NumberNode n1 = new NumberNode(1);
-            NumberNode n2 = new NumberNode(2);
-            NumberNode n3 = new NumberNode(3);
-            NumberNode n4 = new NumberNode(4);
-            NumberNode n5 = new NumberNode(5);
-            NumberNode n6 = new NumberNode(6);
-            NumberNode n7 = new NumberNode(7);
+            Node n1 = new Node(1);
+            Node n2 = new Node(2);
+            Node n3 = new Node(3);
+            Node n4 = new Node(4);
+            Node n5 = new Node(5);
+            Node n6 = new Node(6);
+            Node n7 = new Node(7);
 
             n1.AddChildren(n2);
             n1.AddChildren(n3);
@@ -24,10 +24,7 @@ namespace Program
             n3.AddChildren(n6);
             n3.AddChildren(n7);
 
-            SumVisitor visitor = new SumVisitor();
-            n1.Accept(visitor);
-
-            Console.WriteLine(visitor.Sum);
+            // visitar el árbol aquí
         }
     }
 }

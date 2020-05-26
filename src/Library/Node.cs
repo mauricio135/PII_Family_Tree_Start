@@ -4,11 +4,11 @@ using System;
 
 namespace Library
 {
-    public class NumberNode
+    public class Node
     {
         private int number;
 
-        private List<NumberNode> children = new List<NumberNode>();
+        private List<Node> children = new List<Node>();
 
         public int Number {
             get
@@ -17,26 +17,22 @@ namespace Library
             }
         }
 
-        public ReadOnlyCollection<NumberNode> Children { 
+        public ReadOnlyCollection<Node> Children { 
             get
             {
                 return this.children.AsReadOnly();
             }
         }
 
-        public NumberNode(int number)
+        public Node(int number)
         {
             this.number = number;
         }
 
-        public void AddChildren(NumberNode n)
+        public void AddChildren(Node n)
         {
             this.children.Add(n);
         }
-
-        public void Accept(SumVisitor v)
-        {
-            v.Visit(this);
-        }
+        
     }
 }
