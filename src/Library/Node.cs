@@ -4,11 +4,12 @@ using System;
 
 namespace Library 
 {
-    public class Node<T>: IVisitor<T>
+    public class Node<T>: IVisitable<T>
     {
         private T content;
         private List<Node<T>> children = new List<Node<T>>();
-        public T Content {
+        public T Content 
+        {
             get
             {
                 return this.content;
@@ -32,14 +33,5 @@ namespace Library
 	    {
 		    visitor.visit(this);	
 	    }
-        
-        public virtual void visit (Node<T> visitado)
-        {
-            
-        }
-        public  virtual int visit (T visitado)
-        {
-            return 0;
-        }
     }
 }

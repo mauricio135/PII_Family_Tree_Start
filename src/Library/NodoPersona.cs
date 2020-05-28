@@ -1,6 +1,6 @@
 namespace Library
 {
-    public class NodoPersona : Node<Persona>
+    public class NodoPersona : Node<Persona>, IVisitable<Persona>
     {
         public NodoPersona (Persona content) : base (content)
         { }
@@ -9,14 +9,5 @@ namespace Library
         {
             visitor.visit (this);
         }
-
-        public override int visit (Persona persona)
-        {
-            return persona.Edad();
-        }
-
-        public override int visit (NodoPersona nodo)
-        {
-            foreach
-        }
     }
+}

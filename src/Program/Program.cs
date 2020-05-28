@@ -29,17 +29,29 @@ namespace Program
             Node<Persona> nMia = new Node<Persona>(mia);
 
             nCarlos.AddChildren(nRuben);
+            
             nRuben.AddChildren(nMoria);
+            nRuben.AddChildren(nMariam);
 
-            nRuben.AddChildren(nJavier);
+            nMoria.AddChildren(nJavier);
+
+            nMariam.AddChildren(nMia);
+            nMariam.AddChildren(nSantino);
             nMariam.AddChildren(nNahuel);
 
-            nNahuel.AddChildren(nMia);
-            nNahuel.AddChildren(nSantino);
 
 
+            AgeVisitor ageVisitor = new AgeVisitor();
+            nCarlos.accept(ageVisitor);
+            Console.WriteLine($"La suma de edades es {ageVisitor.AgeTotal}");
 
-            // visitar el árbol aquí
+            OldestSonVisitor oldVisitor = new OldestSonVisitor();
+            nCarlos.accept(oldVisitor);
+            Console.WriteLine($"El hijo más grande es {oldVisitor.Oldest.Nombre}");
+
+            LongestNameVisitor nameVisitor = new LongestNameVisitor();
+            nCarlos.accept(nameVisitor);
+            Console.WriteLine($"El nombre más largo es {nameVisitor.LongName.Nombre}");
         }
     }
 }
