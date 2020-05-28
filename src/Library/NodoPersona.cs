@@ -14,4 +14,9 @@ namespace Library
         {
             return persona.Edad();
         }
+
+        public override int visit (NodoPersona nodo)
+        {
+            foreach
+        }
     }
